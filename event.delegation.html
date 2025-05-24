@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Event delegation</title>
+  </head>
+  <body>
+    <p>Which programming Language you like the most ?</p>
+    <br />
+    <ul id="myList">
+      <li>Javascript🤖</li>
+      <li>React🎼</li>
+      <li>Next 👧</li>
+      <li>HTML/CSS🐦‍🔥</li>
+    </ul>
+    <p id="listValue"></p>
+    <script>
+      const getListDetails = (event) => {
+        console.log(event.target);
+        document.getElementById("listValue").innerHTML =
+          event.target.textContent;
+      };
+
+      document
+        .getElementById("myList")
+        .addEventListener("click", getListDetails);
+    </script>
+  </body>
+</html>
